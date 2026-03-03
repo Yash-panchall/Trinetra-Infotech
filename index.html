@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinetra InfoTech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <Link rel="icon" href="images/trinetra-logo.png" type="image/x-icon">
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.section-navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Start navbar section -->
+    <header class="section-navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="nav-logo">
+                    <img src="images/trinetra-logo.png" alt="Site Logo" width="100%" height="70px">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">Project</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End navbar section -->
+
+    <!-- Start main section -->
+    <main>
+        <section class="section-hero">
+            <div class="container grid grid-two--cols">
+                <div class="section-hero--content">
+                    <P class="hero-subheading">Modern Web solutions</P>
+                    <h1 class="hero-heading">Turning Ideas Into Powerful Digital Experiences</h1>
+                    <p class="hero-para">We create innovative and effective web solutions tailored to your business needs.</p>
+                    <div class="hero-btn">
+                        <a href="#" class="btn btn-white">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="section-hero--img">
+                    <figure>
+                        <img src="images/hero_img.png" alt="Hero Image">
+                    </figure>
+                </div>
+            </div>
+            <br> 
+            <!-- Important note: -->
+            <!-- Here I used br to make flex gap work becuase below svg is not flex item as asbolute positioned applied which is not include in normla flow -->
+            <!-- well we can also make gap via appding margin or padding bottom on section hero but I want to show you how to make gap work with flexbox when we have absolute positioned element -->
+            <div class="custom-shape-divider-bottom-1766867956">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+
+    <!-- Start About section -->
+
+        <section class="section-about">
+            <div class="container">
+                <h1 class="section-common-heading">About Us</h1>
+                <p class="section-common-subheading">we provide innovative web solutions</p>
+            </div>
+            <div class="container grid grid-three--cols">
+                <div class="about-card">
+                    <figure class="icon">
+                        <img src="images/about_our_mission.png" alt="About Our Mission">
+                    </figure>
+                    <h2 class="section-common-title">Our Mission</h2>  
+                    <p class="about-card--para">To deliver cutting-edge web solutions that empower businesses to thrive in the digital landscape.</p>
+                </div>
+                <div class="about-card">
+                    <figure class="icon">
+                        <img src="images/about_our_approach.png" alt="About Our Approach">
+                    </figure>
+                    <h2 class="section-common-title">Our Approach</h2>  
+                    <p class="about-card--para">We follow a structured process—from understanding requirements to designing, developing, and delivering solutions that meet real-world needs.</p>
+                </div>
+                <div class="about-card">
+                    <figure class="icon">
+                        <img src="images/about_our_vision.PNG" alt="About Our Vision">
+                    </figure>
+                    <h2 class="section-common-title">Our Vision</h2>  
+                    <p class="about-card--para">To create user-friendly and high-performing digital experiences by combining clean design, modern technology, and best development practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- End About section -->
+
+        <!-- Our Services Section -->
+
+        <section class="section-our-services">
+            <div class="container">
+                <h1 class="section-common-heading">Our Services</h1>
+                <p class="section-common-subheading">We provide end-to-end web solutions tailored to modern digital needs.</p>
+            </div>
+            <div class="container grid grid-three--cols">
+                <div class="service-card">
+                    <figure class="icon">
+                        <img src="images/webdev.png" alt="web development">
+                    </figure>
+                    <h2 class="section-common-title">Web Development</h2>  
+                    <p class="service-card--para">Building fast, responsive, and scalable websites using modern web technologies for real-world business needs.</p>
+                </div>
+                <div class="service-card">
+                    <figure class="icon">
+                        <img src="images/frontend.png" alt="frontend development">
+                    </figure>
+                    <h2 class="section-common-title">Frontend Development</h2>  
+                    <p class="service-card--para">Creating clean, interactive, and user-friendly interfaces with a focus on performance and accessibility.</p>
+                </div>
+                <div class="service-card">
+                    <figure class="icon">
+                        <img src="images/backend.png" alt="backend development">
+                    </figure>
+                    <h2 class="section-common-title">Backend Development</h2>  
+                    <p class="service-card--para">Developing secure and scalable server-side solutions, APIs, and databases to power web applications.</p>
+                </div>
+                <div class="service-card">
+                    <figure class="icon">
+                        <img src="images/responsive.png" alt="responsive design">
+                    </figure>
+                    <h2 class="section-common-title">Responsive Design</h2>  
+                    <p class="service-card--para">Ensuring websites look and perform perfectly across all devices including desktops, tablets, and mobiles.</p>
+                </div>
+                <div class="service-card">
+                    <figure class="icon">
+                        <img src="images/optimization.png" alt="performance optimization">
+                    </figure>
+                    <h2 class="section-common-title">Performance Optimization</h2>  
+                    <p class="service-card--para">Optimizing website speed, structure, and assets to deliver smooth and fast user experiences.</p>
+                </div>
+                <div class="service-card">
+                    <figure class="icon">
+                        <img src="images/support.png" alt="maintenance and support">
+                    </figure>
+                    <h2 class="section-common-title">Maintenance & Support</h2>  
+                    <p class="service-card--para">Providing ongoing maintenance and support to ensure your website remains secure, up-to-date, and performs optimally.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+
+        <section class="section-why-choose-us">
+            <div class="container">
+                <h1 class="section-common-heading">why choose Trinetra Infotech</h1>
+                <p class="section-common-subheading">Why choose us for your digital transformation journey</p>
+            </div>
+            <div class="container grid grid-three--cols">
+                <div class="choose-left">
+                    <div class="content-right">
+                        <span class="left-number">1</span>
+                        <h2 class="section-common-title">Expertise & Experience</h2>  
+                        <p class="choose-us-card--para">Our team of skilled professionals brings extensive expertise and experience in delivering successful web solutions across various industries.</p>
+                    </div>
+                    <div class="content-right">
+                        <span class="left-number">2</span>
+                        <h2 class="section-common-title">Customer-Centric Approach</h2>  
+                        <p class="choose-us-card--para">We prioritize our clients' needs, working closely with them to understand their goals and deliver tailored solutions that drive business growth.</p>
+                    </div>
+                    <div class="content-right">
+                        <span class="left-number">3</span>
+                        <h2 class="section-common-title">Innovative Solutions</h2>  
+                        <p class="choose-us-card--para">We leverage the latest technologies and industry best practices to create innovative and effective web solutions that stand out in the digital landscape.</p>
+                    </div>
+                </div>
+                <div class="choose-center-content">
+                    <figure>
+                        <img src="images/Phone.png" alt="Choose Us Team">
+                    </figure>
+                </div>
+                <div class="choose-right">
+                    <div class="content-left">
+                        <span class="right-number">4</span>
+                        <h2 class="section-common-title">Timely Delivery</h2>  
+                        <p class="choose-us-card--para">We are committed to delivering projects on time and within budget, ensuring our clients can launch their digital initiatives without delays.</p>
+                    </div>
+                    <div class="content-left">
+                        <span class="right-number">5</span>
+                        <h2 class="section-common-title">Quality & Reliability</h2>  
+                        <p class="choose-us-card--para">We are committed to delivering high-quality solutions that are reliable, secure, and built to last, ensuring long-term success for our clients.</p>
+                    </div>
+                    <div class="content-left">
+                        <span class="right-number">6</span>
+                        <h2 class="section-common-title">Comprehensive Support</h2>  
+                        <p class="choose-us-card--para">We provide ongoing support and maintenance services to ensure our clients' web solutions remain up-to-date, secure, and optimized for performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- End Why Choose Us -->
+
+        <!-- Contact home section -->
+        <section class="endsection-contact-us">
+                <div class="container grid grid-two--cols">
+                    <div class="section-end-content">
+                        <h1 class="endsection-heading">Let’s Build Something Great Together</h1>
+                        <P class="endsection-subheading">Have a project in mind? Let’s create something impactful.</P>
+                        <div class="endsection-btn">
+                            <a href="#" class="btn btn-white">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="endsection-contact-us--img">
+                        <img src="images/endsection-contactimg.png" alt="Hero Image">
+                    </div>
+                </div>
+        </section>
+        <!-- End Contact home section -->
+
+    </main>
+    <!-- End main section -->
+
+    <!-- Footer Section -->
+    <footer class="section-footer">
+        <div class="container grid grid-four--cols">
+            <div class="footer-about">
+                <a href="index.html"><h3 class="footer-heading">About Trinetra Infotech</h3></a>
+                <p class="footer-para">We build modern, responsive, and scalable digital solutions to help businesses grow online.</p>
+
+                <div class="footer-social-icons">
+                    <a href="https://www.linkedin.com/in/yash-panchal-9b0a76319/" target="_blank" class="footer-social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.upwork.com/freelancers/~01c0dc7659a4801d2d?mp_source=share" target="_blank" class="footer-social-icon"><i class="fa-brands fa-square-upwork"></i></a>
+                    <a href="mailto:yashpanchal652004@gmail.com" target="_blank" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h2 class="footer-heading">Quick Links</h2>
+                <ul>
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="about.html" class="footer-link">About</a></li>
+                    <li><a href="project.html" class="footer-link">Project</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    <li><a href="blog.html" class="footer-link">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h2 class="footer-heading">Services</h2>
+                <ul>
+                    <li><a href="#" class="footer-link">Web Development</a></li>
+                    <li><a href="#" class="footer-link">Frontend Development</a></li>
+                    <li><a href="#" class="footer-link">Backend Development</a></li>
+                    <li><a href="#" class="footer-link">Responsive Design</a></li>
+                    <li><a href="#" class="footer-link">Performance Optimization</a></li>
+                    <li><a href="#" class="footer-link">Maintenance & Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h2 class="footer-heading">Contact Us</h2>
+                <p class="footer-para">Email: yashpanchal652004@gmail.com</p>
+                <p class="footer-para">Phone: +91 7041648643</p>
+                <p class="footer-para">Location: India</p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p class="footer-bottom-para">&copy; 2025 Trinetra Infotech. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+</body>
+</html>

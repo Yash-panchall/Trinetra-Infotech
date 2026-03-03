@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+}
+
+p, li, a, span, button , label {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+    color: var(--para-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+:root {
+    --main-color: #2563EB;
+    --support-color: rgba(230, 233, 242, 0.864);
+    --font-color: #111827;
+    --bg-color: #FFFFFF;
+    --heading-color: #1F2937;
+    --para-color: #4B5563;
+    --btn-hover-color: #1E40AF;
+    --btn-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    --supporting-linear-gradient : linear-gradient(to right, #f8fafc, #e0e7ff);
+}
+
+.container {
+    max-width: 142rem;
+    margin: 0 auto;
+    padding: 0.5rem 2.4rem;
+}
+
+/* Module common reusable styles */
+
+.section-common-heading{
+    font-size: 3.2rem;
+    word-spacing: 0.3rem;
+}
+
+.section-common-subheading{
+    font-size: 1.8rem;
+    word-spacing: 0.2rem;
+}
+
+.section-common-title{
+    font-size: 1.8rem;
+    margin : 4rem 0 1.2rem 0;
+}
+
+/* End Module common reusable styles */
+
+/* navbar */
+/* .section-navbar{
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+} */
+
+.section-navbar {
+    position: fixed;
+    /*hereiamaddingtopandleftpositionzeroforbestpracticeandtoavoidcrossbrowserissues*/top: 0;
+    left: 0;
+    z-index: 1;
+    background: transparent;
+    width: 100%;
+    box-shadow: none;
+    backdrop-filter: none;
+
+}
+
+/* This class will add via javascript when user scrolls down the page. */
+.section-navbar.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    backdrop-filter: blur(8px);
+}
+
+.section-navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 2.4rem 0; */
+}
+
+.section-navbar .nav-menu ul{
+    display: flex;
+    gap: 3.2rem;
+    text-transform: capitalize;
+
+    & li a{
+        font-weight: 500;
+        position: relative;
+        /* display: inline-block; */
+
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 0%;
+            border-bottom: var(--main-color) solid 2px;
+            /*height: 0.2rem;
+            *//*background-color: var(--main-color);
+            */transition: all 1s ease;
+        }
+
+        &:hover::after{
+            width: 100%;
+        }
+    }
+}
+
+/* grid styles */
+
+.grid{
+    display: grid;
+}
+
+.grid-two--cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three--cols{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four--cols{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* button */
+
+.btn{
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: var(--btn-hover-color);
+        box-shadow: var(--btn-box-shadow);
+    }
+}
+
+/* All sections first containers general padding  */
+
+/* .section-about .container:first-child,
+.section-our-services .container:first-child,
+.section-why-choose-us .container:first-child,
+.section-contact .container:first-child{
+    padding: 5rem 0 2rem 0;
+} */
+
+:is(.section-about, .section-our-services, .section-why-choose-us, .section-contact) .container:first-child{
+    padding: 5rem 0 2rem 0;
+}
+
+/* main content styles */
+
+.section-hero{
+    padding-top: 8.4rem;
+    background-image: var(--supporting-linear-gradient);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap : 4rem;
+}
+
+/* .section-hero{
+
+} */
+
+.section-hero--img img{
+   width: 80%;
+   height: auto;
+   /* margin: auto; */
+   transform: scaleX(-1);
+   -webkit-transform: scaleX(-1);
+   -moz-transform: scaleX(-1);
+   -ms-transform: scaleX(-1);
+   -o-transform: scaleX(-1);
+}
+
+.section-hero .grid{
+    align-items: center;
+    justify-items: center;
+    gap: 6rem;
+
+    & .hero-subheading{
+        font-size: 1.8rem;
+        word-spacing: 0.2rem;
+        letter-spacing: 0.2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    & .hero-heading{
+        font-size: 5.2rem;
+        color: var(--heading-color);
+        margin: 1rem 0;
+        line-height: 1.2;
+    }
+
+    & .hero-para{
+        margin : 1rem 0 3.5rem 0;
+        line-height: 1.6;
+    }
+}
+
+.section-hero--img figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* shape divider */
+
+.custom-shape-divider-bottom-1766867956 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1766867956 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 12rem;
+}
+
+.custom-shape-divider-bottom-1766867956 .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* End main section */
+
+
+/* Start About section */
+
+.section-about .about-card{
+    text-align: center;
+}
+
+.section-about .about-card img{
+    padding: 2rem;
+    background-image: var(--supporting-linear-gradient);
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+
+.section-about .about-card img:hover{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+
+.section-about .grid-three--cols{
+    margin: 9rem auto;
+    gap: 5rem;
+}
+
+
+/* Our Services */
+
+.section-our-services{
+    background-image: var(--supporting-linear-gradient);
+}
+
+.section-our-services .service-card img{
+    /* padding: 2rem; */
+    /* background-image: var(--supporting-linear-gradient); */
+    width: 7rem;
+    height: 7rem;
+    /* object-fit: cover; */
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+
+.section-our-services .grid-three--cols{
+    padding: 8rem 2.4rem;
+    gap: 5rem;
+}
+
+.service-card{
+    transition:all 0.3s ease;
+    padding: 2rem;
+
+
+    & .section-common-title{
+        margin : 2rem auto 1.2rem auto;
+    }
+
+    &:hover{
+        border-radius: 1rem;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+}
+
+
+/* Why choose us section */
+
+.section-why-choose-us{
+
+    & .choose-left{
+        text-align: right;
+        & .left-number{
+            margin-left: auto; /*use margin-left to align to right*/
+            /* margin-right: auto; */
+        }
+    }
+
+    & .choose-left , & .choose-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    & .section-common-title{
+        margin : 2rem auto 1.2rem auto;
+    }
+
+    & .left-number , & .right-number{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        height: 4rem;
+        width: 4rem;
+        /* text-align: center; */
+        background-color: #68A3E8;
+        color: white;
+        border-radius : 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+
+
+}
+
+.section-why-choose-us .grid-three--cols{
+    padding: 8rem 2.4rem;
+}
+
+.section-why-choose-us .choose-center-content img{
+    max-width: 50rem;
+}
+
+
+/* Why choose us section endsection */
+
+
+/* Contact home section */
+
+.endsection-contact-us{
+    /* top : 8rem; */
+    margin-bottom: -10rem;
+    position: relative;
+}
+
+.endsection-contact-us .grid{
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 70rem;
+    min-height: 20rem;
+    align-items: center;
+    justify-items: center;
+    gap: 3rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+
+    & .endsection-subheading{
+        margin: 1rem 0 2rem 0;
+    }
+}
+
+.endsection-contact-us--img{
+    text-align: center;
+    & img{
+        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        -moz-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        height: 15rem;
+    }
+}
+
+/* End Contact home section */
+
+/* Footer section */
+
+footer{
+    background-color: var(--font-color);
+    /* color: white; */
+    padding: 15rem 2.4rem 6rem 2.4rem;
+
+    & p ,li a{
+        font-size: 1.3rem;
+    }
+}
+
+footer *{
+    color: #f3f4f6;
+}
+
+.section-footer .container{
+    gap: 4rem;
+    text-align: right;
+    /* padding: 6rem 2.4rem; */
+
+    & .footer-heading{
+        margin-bottom: 1.5rem;
+    }
+}
+
+.footer-about{
+
+    text-align: left;
+
+    & .footer-para{
+        margin: 1.5rem 0 3rem 0;
+    }
+}
+
+.footer-bottom{
+    margin-top: 2rem;
+    
+    & .footer-bottom-para{
+    text-align: left;
+    }
+}
+
+.footer-social-icons{
+
+    display: flex;
+    gap: 1.5rem;
+
+    & a{
+        display: grid;
+        place-items: center;
+        /*Itwillplacetheitemsincenterbothverticallyandhorizontallywellhereihavecenteredtheicons*/width: 4rem;
+        aspect-ratio: 1;
+        background-color: white;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+
+        &:hover{
+            rotate: 360deg;
+        }
+    }
+
+    & a i{
+        color: var(--font-color);
+        font-size: 1.8rem;
+    }
+}
+
+/* End Footer section */
+
+
+/* Contact page css */
+
+/* Dropdown */
+
+    .custom-select-wrapper { position: relative; user-select: none; width: 200px; }
+    .custom-select { position: relative; display: flex; flex-direction: column; border: 2px solid #333; border-radius: 8px; background: white; }
+
+    .custom-select__trigger {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    }
+
+    .custom-options {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        border: 2px solid #333;
+        border-radius: 8px;
+        background: white;
+        display: none;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        
+        /* Scrollbar */
+        max-height: 20rem;
+        overflow-y: auto;
+    }
+
+.custom-options::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.custom-options::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.custom-options::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Show the list when the wrapper has the 'open' class */
+.custom-select.open .custom-options {
+     display: block; 
+}
+
+.custom-option {
+padding: 10px;
+display: flex;
+align-items: center;
+/* gap: 10px; */
+cursor: pointer;
+}
+
+.custom-option:hover {
+     background-color: #f0f0f0; color: #007bff; 
+}
+
+.section-contact{
+    padding-top: 8.4rem;
+    background-image: var(--supporting-linear-gradient);
+
+    & .container{
+        padding: 7rem 4rem;
+
+        & form {
+            
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            & input, & textarea{
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid #cbd5e1;
+                border-radius: 0.4rem;
+                resize: none;
+            }
+
+            & label{
+                display: block;
+                margin-bottom: 0.5rem;
+                /* font-weight: 500; */
+            }
+
+            & .arrow i{
+                font-size: 1.2rem;
+                color: var(--para-color);
+            }
+        }
+    }
+
+    & .grid-two--cols{
+        gap: 6rem;
+    }
+}
+
+::placeholder{
+    letter-spacing: .1rem;
+}
+
+
+/* Resoponsive Media Queries */
+
+@media( width <= 1414px){
+    html{
+        font-size: 56.25%;
+    }
+}
+
+@media (width <= 1271px ) {
+    html{
+        font-size: 50%;
+    }
+}
+
+@media (width <= 1130px ) {
+    .grid-two--cols{
+        grid-template-columns: 1fr;
+    }
+
+    .section-hero .grid{
+        gap: 4rem;
+
+        & .hero-heading{
+            font-size: 7rem;
+        }
+    }
+
+    .section-hero--img{
+        width: 50%;
+        height: auto;
+        order: 1;
+    }
+
+    .section-hero--content{
+        margin-top: 4rem;
+        order: 2;
+    }
+
+    .custom-shape-divider-bottom-1766867956 svg{
+        height: 8rem;
+    }
+}

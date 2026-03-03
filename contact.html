@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinetra Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/trinetra-logo.png" type="image/x-icon">
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.section-navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Toggle the dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.custom-select__trigger').forEach(trigger => {
+        
+                trigger.addEventListener('click', function() {
+
+                    const icon = this.querySelector('.arrow i');
+                    icon.classList.toggle('fa-caret-down');
+                    icon.classList.toggle('fa-caret-up');
+                    this.parentElement.classList.toggle('open');
+                });
+            });
+
+            // Handle option selection
+            for (const option of document.querySelectorAll(".custom-option")) {
+                option.addEventListener('click', function() {
+                    if (!this.classList.contains('selected')) {
+                        // Update the trigger text/image
+                        const trigger = this.closest('.custom-select').querySelector('.custom-select__trigger span');
+                        trigger.innerHTML = this.innerHTML;
+                        
+                        // Update the hidden input value
+                        const hiddenInput = this.closest('.custom-select-wrapper').querySelector('input[type="hidden"]');
+                        if (hiddenInput) {
+                            hiddenInput.value = this.dataset.value;
+                        }
+                        
+                        // Close the dropdown
+                        this.closest('.custom-select').classList.remove('open');
+                    }
+                });
+            }
+
+            // Close dropdown if clicking outside
+            window.addEventListener('click', function(e) {
+                const select = document.querySelector('.custom-select');
+                if (!select.contains(e.target)) {
+                    select.classList.remove('open');
+                }
+            });});
+
+    </script>
+    <style>
+        footer{
+            padding-top: 6rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Start navbar section -->
+    <header class="section-navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="nav-logo">
+                    <img src="images/trinetra-logo.png" alt="Site Logo" width="100%" height="70px">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">Project</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End navbar section -->
+
+    <!-- Start main section -->
+    <main>
+
+        <!-- Start Contact section -->
+
+            <section class="section-contact">
+                <div class="container">
+                    <h1 class="section-common-heading">Contact Us</h1>
+                    <p class="section-common-subheading">Get in touch with us for any inquiries or support.</p>
+                </div>
+                <div class="container grid grid-two--cols">
+                    <div>
+                        <form action="https://formspree.io/f/xpqjezez" method="POST" class="contact-form">
+                            <div>
+                                <label for="username" class="contact-label">Enter Name</label>
+                                <input name="username" type="text" class="contact-input" id="username" placeholder="Your Name" required autocomplete="off">
+                            </div>
+                            <div>
+                                <label for="email" class="contact-label">Enter Email</label>
+                                <input name="email" type="email" class="contact-input" id="email" placeholder="Your Email" required autocomplete="off">
+                            </div>
+                            <div>
+                                <label for="message" class="contact-label">Enter Message</label>
+                                <textarea name="message" id="message" class="contact-input contact-textarea" placeholder="Your Message" rows="10" cols="30"></textarea>
+                            </div>
+
+                            <div class="custom-select-wrapper">
+                                <label for="Service" class="contact-label">Select a Service</label>
+                                <input type="hidden" name="service" id="service-input" value="">
+                                <div class="custom-select">
+                                    <div class="custom-select__trigger">
+                                        <span>Select a Service</span>
+                                        <div class="arrow"><i class="fa-solid fa-caret-down"></i></div>
+                                    </div>
+                                    <div class="custom-options">
+                                        <span class="custom-option" data-value="web-development">
+                                            Web Development
+                                        </span>
+                                        <span class="custom-option" data-value="mobile-app-development">
+                                            Mobile App Development
+                                        </span>
+                                        <span class="custom-option" data-value="desktop-app-development">
+                                            Desktop App Development
+                                        </span>
+                                        <span class="custom-option" data-value="ui-ux-design">
+                                            UI/UX Design
+                                        </span>
+                                        <span class="custom-option" data-value="performance-optimization">
+                                            Performance Optimization
+                                        </span>
+                                        <span class="custom-option" data-value="maintenance-support">
+                                            Maintenance & Support
+                                        </span>
+                                        <span class="custom-option" data-value="other">
+                                            Other
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="custom-select-wrapper">
+                                <div class="custom-select">
+                                    <div class="custom-select__trigger">
+                                        <span>Select a Fruit</span>
+                                        <div class="arrow"></div>
+                                    </div>
+                                    <div class="custom-options">
+                                        <span class="custom-option" data-value="apple">
+                                            <img src="https://img.icons8.com" /> Apple
+                                        </span>
+                                        <span class="custom-option" data-value="banana">
+                                            <img src="https://img.icons8.com" /> Banana
+                                        </span>
+                                        <span class="custom-option" data-value="orange">
+                                            <img src="https://img.icons8.com" /> Orange
+                                        </span>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <img src="images/contact-us.png" alt="Contact Image" width="100%" height="auto">
+                    </div>
+
+                
+
+            </section>
+
+        <!-- End Contact section -->
+
+    </main>
+    <!-- End main section -->
+
+    <!-- Footer Section -->
+    <footer class="section-footer">
+        <div class="container grid grid-four--cols">
+            <div class="footer-about">
+                <a href="index.html"><h3 class="footer-heading">About Trinetra Infotech</h3></a>
+                <p class="footer-para">We build modern, responsive, and scalable digital solutions to help businesses grow online.</p>
+
+                <div class="footer-social-icons">
+                    <a href="https://www.linkedin.com/in/yash-panchal-9b0a76319/" target="_blank" class="footer-social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.upwork.com/freelancers/~01c0dc7659a4801d2d?mp_source=share" target="_blank" class="footer-social-icon"><i class="fa-brands fa-square-upwork"></i></a>
+                    <a href="mailto:yashpanchal652004@gmail.com" target="_blank" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h2 class="footer-heading">Quick Links</h2>
+                <ul>
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="about.html" class="footer-link">About</a></li>
+                    <li><a href="project.html" class="footer-link">Project</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    <li><a href="blog.html" class="footer-link">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h2 class="footer-heading">Services</h2>
+                <ul>
+                    <li><a href="#" class="footer-link">Web Development</a></li>
+                    <li><a href="#" class="footer-link">Frontend Development</a></li>
+                    <li><a href="#" class="footer-link">Backend Development</a></li>
+                    <li><a href="#" class="footer-link">Responsive Design</a></li>
+                    <li><a href="#" class="footer-link">Performance Optimization</a></li>
+                    <li><a href="#" class="footer-link">Maintenance & Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h2 class="footer-heading">Contact Us</h2>
+                <p class="footer-para">Email: yashpanchal652004@gmail.com</p>
+                <p class="footer-para">Phone: +91 7041648643</p>
+                <p class="footer-para">Location: India</p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p class="footer-bottom-para">&copy; 2025 Trinetra Infotech. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+</body>
+</html>
