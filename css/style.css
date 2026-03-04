@@ -180,7 +180,7 @@ li {
 } */
 
 :is(.section-about, .section-our-services, .section-why-choose-us, .section-contact) .container:first-child{
-    padding: 5rem 0 2rem 0;
+    padding: 5rem 2rem 2rem 2rem;
 }
 
 /* main content styles */
@@ -535,15 +535,28 @@ footer *{
 
 /* Dropdown */
 
-    .custom-select-wrapper { position: relative; user-select: none; width: 200px; }
-    .custom-select { position: relative; display: flex; flex-direction: column; border: 2px solid #333; border-radius: 8px; background: white; }
+    .custom-select-wrapper {
+
+        position: relative; 
+        user-select: none; 
+        width: 100%; 
+        max-width: 30rem;
+    }
+    .custom-select {
+        position: relative; 
+        display: flex; 
+        flex-direction: column; 
+        border: 2px solid #333; 
+        border-radius: 8px; 
+        background: white; 
+    }
 
     .custom-select__trigger {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
     }
 
     .custom-options {
@@ -619,6 +632,8 @@ cursor: pointer;
                 border: 1px solid #cbd5e1;
                 border-radius: 0.4rem;
                 resize: none;
+                letter-spacing: 0.1rem;
+                font-size: 1.4rem;
             }
 
             & label{
@@ -646,19 +661,23 @@ cursor: pointer;
 
 /* Resoponsive Media Queries */
 
-@media( width <= 1414px){
+@media( width <= 1399px){
     html{
         font-size: 56.25%;
     }
 }
 
-@media (width <= 1271px ) {
+ @media (width <= 1199px ) {
     html{
         font-size: 50%;
     }
+
+    .grid-four--cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (width <= 1130px ) {
+/* @media (width <= 1130px ) {
     .grid-two--cols{
         grid-template-columns: 1fr;
     }
@@ -685,4 +704,4 @@ cursor: pointer;
     .custom-shape-divider-bottom-1766867956 svg{
         height: 8rem;
     }
-}
+}  */
