@@ -421,7 +421,8 @@ li {
 .endsection-contact-us .grid{
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    width: 70rem;
+    max-width: 70rem;
+    width: 100%;
     min-height: 20rem;
     align-items: center;
     justify-items: center;
