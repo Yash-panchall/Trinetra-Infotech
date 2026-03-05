@@ -661,11 +661,15 @@ cursor: pointer;
 
 /* Resoponsive Media Queries */
 
+/* XL: 1200px - 1399px (Desktop) */
 @media( width <= 1399px){
     html{
         font-size: 56.25%;
     }
 }
+
+/* LG: 992px - 1199px (Laptop/Small Desktop) */
+/* 👉 START changing grid layouts here */
 
  @media (width <= 1199px ) {
     html{
@@ -675,9 +679,26 @@ cursor: pointer;
     .grid-four--cols {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .section-footer .container{
+        text-align: left;
+        max-width: 90rem;
+        margin: 0 auto;
+
+        & > :nth-child(even){
+            text-align: right;
+        }
+
+        &:nth-child(2){
+            margin-top: 2rem;
+        }
+    }
 }
 
-/* @media (width <= 1130px ) {
+/* MD: 768px - 991px (Tablet) */
+/* 👉 MAJOR layout changes */
+
+/* @media (width <= 991px ) {
     .grid-two--cols{
         grid-template-columns: 1fr;
     }
@@ -704,4 +725,4 @@ cursor: pointer;
     .custom-shape-divider-bottom-1766867956 svg{
         height: 8rem;
     }
-}  */
+} */
