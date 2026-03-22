@@ -22,6 +22,18 @@
             navToggle.addEventListener('click', () => {
                 const isOpen = navbar.classList.toggle('nav-open');
             });
+
+            const footerToggles = document.querySelectorAll('.footer-toggle');
+            footerToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const parent = toggle.parentElement;
+                    parent.classList.toggle('footer-open');
+                    const iconFooter = toggle.querySelector('i');
+                    iconFooter.classList.toggle('fa-angle-down');
+                    iconFooter.classList.toggle('fa-angle-up');
+                });
+            });
+
         });
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -91,7 +103,7 @@
 
         <section class="section-about">
             <div class="container">
-                <h1 class="section-common-heading">About Us</h1>
+                <h2 class="section-common-heading">About Us</h2>
                 <p class="section-common-subheading">we provide innovative web solutions</p>
             </div>
             <div class="container grid grid-three--cols">
@@ -125,7 +137,7 @@
 
         <section class="section-our-services">
             <div class="container">
-                <h1 class="section-common-heading">Our Services</h1>
+                <h2 class="section-common-heading">Our Services</h2>
                 <p class="section-common-subheading">We provide end-to-end web solutions tailored to modern digital needs.</p>
             </div>
             <div class="container grid grid-three--cols">
@@ -178,7 +190,7 @@
 
         <section class="section-why-choose-us">
             <div class="container">
-                <h1 class="section-common-heading">why choose Trinetra Infotech</h1>
+                <h2 class="section-common-heading">why choose Trinetra Infotech</h2>
                 <p class="section-common-subheading">Why choose us for your digital transformation journey</p>
             </div>
             <div class="container grid grid-three--cols">
@@ -230,8 +242,8 @@
         <section class="endsection-contact-us">
                 <div class="container grid grid-two--cols">
                     <div class="section-end-content">
-                        <h1 class="endsection-heading">Let’s Build Something Great Together</h1>
-                        <P class="endsection-subheading">Have a project in mind? Let’s create something impactful.</P>
+                        <h2 class="endsection-heading">Let’s Build Something Great Together</h2>
+                        <p class="endsection-subheading">Have a project in mind? Let’s create something impactful.</p>
                         <div class="endsection-btn">
                             <a href="#" class="btn btn-white">Get In Touch</a>
                         </div>
@@ -261,6 +273,9 @@
             </div>
             <div class="footer-links">
                 <h2 class="footer-heading">Quick Links</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
                     <li><a href="index.html" class="footer-link">Home</a></li>
                     <li><a href="about.html" class="footer-link">About</a></li>
@@ -271,6 +286,9 @@
             </div>
             <div class="footer-services">
                 <h2 class="footer-heading">Services</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
                     <li><a href="#" class="footer-link">Web Development</a></li>
                     <li><a href="#" class="footer-link">Frontend Development</a></li>

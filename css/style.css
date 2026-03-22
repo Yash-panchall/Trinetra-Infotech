@@ -852,9 +852,51 @@ cursor: pointer;
         & a{
             padding: 0.8rem 0;
             display: block;
-
+            text-transform: uppercase;
         }
       }
     }
 
+    .section-footer .container{
+        gap: 2rem;
+    }
+
+    .section-footer .footer-links, .section-footer .footer-services{
+        position: relative;
+
+        & .footer-toggle{
+            position: absolute;
+            font-size: large;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+
+
+        & ul{
+            display: none;
+        }
+
+        &.footer-open ul{
+            display: block;
+        }
+    }
+
+}
+
+
+/* XS: <576px (Small Mobile) */
+/* 👉 Fine-tune spacing and sizes */
+@media (max-width: 575px) {
+    .section-hero .container .hero-heading {
+        font-size: 4.6rem;
+    }
+
+    .section-common-heading{
+        font-size: 2.8rem;
+    }
+
+    .endsection-contact-us .grid{
+        padding: 2rem;
+    }
 }

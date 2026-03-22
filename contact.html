@@ -27,6 +27,17 @@
                 const isOpen = navbar.classList.toggle('nav-open');
             });
 
+            const footerToggles = document.querySelectorAll('.footer-toggle');
+            footerToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const parent = toggle.parentElement;
+                    parent.classList.toggle('footer-open');
+                    const iconFooter = toggle.querySelector('i');
+                    iconFooter.classList.toggle('fa-angle-down');
+                    iconFooter.classList.toggle('fa-angle-up');
+                });
+            });
+
             document.querySelectorAll('.custom-select__trigger').forEach(trigger => {
         
                 trigger.addEventListener('click', function() {
@@ -212,6 +223,9 @@
             </div>
             <div class="footer-links">
                 <h2 class="footer-heading">Quick Links</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
                     <li><a href="index.html" class="footer-link">Home</a></li>
                     <li><a href="about.html" class="footer-link">About</a></li>
@@ -222,6 +236,9 @@
             </div>
             <div class="footer-services">
                 <h2 class="footer-heading">Services</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
                     <li><a href="#" class="footer-link">Web Development</a></li>
                     <li><a href="#" class="footer-link">Frontend Development</a></li>
