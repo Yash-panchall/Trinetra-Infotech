@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trinetra InfoTech</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css">
     <Link rel="icon" href="images/trinetra-logo.png" type="image/x-icon">
     <script>
         window.addEventListener('scroll', function() {
@@ -16,7 +14,18 @@
                 navbar.classList.remove('navbar-scrolled');
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle ');
+            const navbar = document.querySelector('.section-navbar');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = navbar.classList.toggle('nav-open');
+            });
+        });
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -27,6 +36,11 @@
                 <a href="index.html" class="nav-logo">
                     <img src="images/trinetra-logo.png" alt="Site Logo" width="100%" height="70px">
                 </a>
+            </div>
+            <div class="nav-toggle">
+                <button>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
             <nav class="nav-menu">
                 <ul>

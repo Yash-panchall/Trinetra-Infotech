@@ -19,6 +19,14 @@
 
         // Toggle the dropdown
         document.addEventListener('DOMContentLoaded', function() {
+
+            const navToggle = document.querySelector('.nav-toggle ');
+            const navbar = document.querySelector('.section-navbar');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = navbar.classList.toggle('nav-open');
+            });
+
             document.querySelectorAll('.custom-select__trigger').forEach(trigger => {
         
                 trigger.addEventListener('click', function() {
@@ -74,6 +82,11 @@
                 <a href="index.html" class="nav-logo">
                     <img src="images/trinetra-logo.png" alt="Site Logo" width="100%" height="70px">
                 </a>
+            </div>
+            <div class="nav-toggle">
+                <button>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
             <nav class="nav-menu">
                 <ul>
