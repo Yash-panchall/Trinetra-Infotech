@@ -19,6 +19,25 @@
 
         // Toggle the dropdown
         document.addEventListener('DOMContentLoaded', function() {
+
+            const navToggle = document.querySelector('.nav-toggle ');
+            const navbar = document.querySelector('.section-navbar');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = navbar.classList.toggle('nav-open');
+            });
+
+            const footerToggles = document.querySelectorAll('.footer-toggle');
+            footerToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const parent = toggle.parentElement;
+                    parent.classList.toggle('footer-open');
+                    const iconFooter = toggle.querySelector('i');
+                    iconFooter.classList.toggle('fa-angle-down');
+                    iconFooter.classList.toggle('fa-angle-up');
+                });
+            });
+
             document.querySelectorAll('.custom-select__trigger').forEach(trigger => {
         
                 trigger.addEventListener('click', function() {
@@ -75,13 +94,18 @@
                     <img src="images/trinetra-logo.png" alt="Site Logo" width="100%" height="70px">
                 </a>
             </div>
+            <div class="nav-toggle">
+                <button>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
             <nav class="nav-menu">
                 <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="project.html" class="nav-link">Project</a></li>
+                    <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="index.html#why-choose" class="nav-link">Why Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -199,23 +223,29 @@
             </div>
             <div class="footer-links">
                 <h2 class="footer-heading">Quick Links</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="project.html" class="footer-link">Project</a></li>
+                    <li><a href="index.html#home" class="footer-link">Home</a></li>
+                    <li><a href="index.html#about" class="footer-link">About</a></li>
+                    <li><a href="index.html#services" class="footer-link">Services</a></li>
                     <li><a href="contact.html" class="footer-link">Contact</a></li>
-                    <li><a href="blog.html" class="footer-link">Blog</a></li>
+                    <li><a href="index.html#why-choose" class="footer-link">Why Us</a></li>
                 </ul>
             </div>
             <div class="footer-services">
                 <h2 class="footer-heading">Services</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
-                    <li><a href="#" class="footer-link">Web Development</a></li>
-                    <li><a href="#" class="footer-link">Frontend Development</a></li>
-                    <li><a href="#" class="footer-link">Backend Development</a></li>
-                    <li><a href="#" class="footer-link">Responsive Design</a></li>
-                    <li><a href="#" class="footer-link">Performance Optimization</a></li>
-                    <li><a href="#" class="footer-link">Maintenance & Support</a></li>
+                    <li><a href="index.html#services" class="footer-link">Web Development</a></li>
+                    <li><a href="index.html#services" class="footer-link">Frontend Development</a></li>
+                    <li><a href="index.html#services" class="footer-link">Backend Development</a></li>
+                    <li><a href="index.html#services" class="footer-link">Responsive Design</a></li>
+                    <li><a href="index.html#services" class="footer-link">Performance Optimization</a></li>
+                    <li><a href="index.html#services" class="footer-link">Maintenance & Support</a></li>
                 </ul>
             </div>
             <div class="footer-contact">

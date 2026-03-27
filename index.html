@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trinetra InfoTech</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css">
     <Link rel="icon" href="images/trinetra-logo.png" type="image/x-icon">
     <script>
         window.addEventListener('scroll', function() {
@@ -16,7 +14,30 @@
                 navbar.classList.remove('navbar-scrolled');
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle ');
+            const navbar = document.querySelector('.section-navbar');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = navbar.classList.toggle('nav-open');
+            });
+
+            const footerToggles = document.querySelectorAll('.footer-toggle');
+            footerToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const parent = toggle.parentElement;
+                    parent.classList.toggle('footer-open');
+                    const iconFooter = toggle.querySelector('i');
+                    iconFooter.classList.toggle('fa-angle-down');
+                    iconFooter.classList.toggle('fa-angle-up');
+                });
+            });
+
+        });
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -28,13 +49,18 @@
                     <img src="images/trinetra-logo.png" alt="Site Logo" width="100%" height="70px">
                 </a>
             </div>
+            <div class="nav-toggle">
+                <button>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
             <nav class="nav-menu">
                 <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="project.html" class="nav-link">Project</a></li>
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="#why-choose" class="nav-link">Why Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,14 +69,14 @@
 
     <!-- Start main section -->
     <main>
-        <section class="section-hero">
+        <section class="section-hero" id="home">
             <div class="container grid grid-two--cols">
                 <div class="section-hero--content">
                     <P class="hero-subheading">Modern Web solutions</P>
                     <h1 class="hero-heading">Turning Ideas Into Powerful Digital Experiences</h1>
                     <p class="hero-para">We create innovative and effective web solutions tailored to your business needs.</p>
                     <div class="hero-btn">
-                        <a href="#" class="btn btn-white">Get In Touch</a>
+                        <a href="contact.html" class="btn btn-white">Get In Touch</a>
                     </div>
                 </div>
                 <div class="section-hero--img">
@@ -75,9 +101,9 @@
 
     <!-- Start About section -->
 
-        <section class="section-about">
+        <section class="section-about" id="about">
             <div class="container">
-                <h1 class="section-common-heading">About Us</h1>
+                <h2 class="section-common-heading">About Us</h2>
                 <p class="section-common-subheading">we provide innovative web solutions</p>
             </div>
             <div class="container grid grid-three--cols">
@@ -109,9 +135,9 @@
 
         <!-- Our Services Section -->
 
-        <section class="section-our-services">
+        <section class="section-our-services" id="services">
             <div class="container">
-                <h1 class="section-common-heading">Our Services</h1>
+                <h2 class="section-common-heading">Our Services</h2>
                 <p class="section-common-subheading">We provide end-to-end web solutions tailored to modern digital needs.</p>
             </div>
             <div class="container grid grid-three--cols">
@@ -162,9 +188,9 @@
 
         <!-- Why Choose Us Section -->
 
-        <section class="section-why-choose-us">
+        <section class="section-why-choose-us" id="why-choose">
             <div class="container">
-                <h1 class="section-common-heading">why choose Trinetra Infotech</h1>
+                <h2 class="section-common-heading">why choose Trinetra Infotech</h2>
                 <p class="section-common-subheading">Why choose us for your digital transformation journey</p>
             </div>
             <div class="container grid grid-three--cols">
@@ -213,13 +239,13 @@
         <!-- End Why Choose Us -->
 
         <!-- Contact home section -->
-        <section class="endsection-contact-us">
+        <section class="endsection-contact-us" id="contact-cta">
                 <div class="container grid grid-two--cols">
                     <div class="section-end-content">
-                        <h1 class="endsection-heading">Let’s Build Something Great Together</h1>
-                        <P class="endsection-subheading">Have a project in mind? Let’s create something impactful.</P>
+                        <h2 class="endsection-heading">Let’s Build Something Great Together</h2>
+                        <p class="endsection-subheading">Have a project in mind? Let’s create something impactful.</p>
                         <div class="endsection-btn">
-                            <a href="#" class="btn btn-white">Get In Touch</a>
+                            <a href="contact.html" class="btn btn-white">Get In Touch</a>
                         </div>
                     </div>
                     <div class="endsection-contact-us--img">
@@ -236,7 +262,7 @@
     <footer class="section-footer">
         <div class="container grid grid-four--cols">
             <div class="footer-about">
-                <a href="index.html"><h3 class="footer-heading">About Trinetra Infotech</h3></a>
+                <a href="#home"><h3 class="footer-heading">About Trinetra Infotech</h3></a>
                 <p class="footer-para">We build modern, responsive, and scalable digital solutions to help businesses grow online.</p>
 
                 <div class="footer-social-icons">
@@ -247,23 +273,29 @@
             </div>
             <div class="footer-links">
                 <h2 class="footer-heading">Quick Links</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="project.html" class="footer-link">Project</a></li>
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#about" class="footer-link">About</a></li>
+                    <li><a href="#services" class="footer-link">Services</a></li>
                     <li><a href="contact.html" class="footer-link">Contact</a></li>
-                    <li><a href="blog.html" class="footer-link">Blog</a></li>
+                    <li><a href="#why-choose" class="footer-link">Why Us</a></li>
                 </ul>
             </div>
             <div class="footer-services">
                 <h2 class="footer-heading">Services</h2>
+                <div class="footer-toggle">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
                 <ul>
-                    <li><a href="#" class="footer-link">Web Development</a></li>
-                    <li><a href="#" class="footer-link">Frontend Development</a></li>
-                    <li><a href="#" class="footer-link">Backend Development</a></li>
-                    <li><a href="#" class="footer-link">Responsive Design</a></li>
-                    <li><a href="#" class="footer-link">Performance Optimization</a></li>
-                    <li><a href="#" class="footer-link">Maintenance & Support</a></li>
+                    <li><a href="#services" class="footer-link">Web Development</a></li>
+                    <li><a href="#services" class="footer-link">Frontend Development</a></li>
+                    <li><a href="#services" class="footer-link">Backend Development</a></li>
+                    <li><a href="#services" class="footer-link">Responsive Design</a></li>
+                    <li><a href="#services" class="footer-link">Performance Optimization</a></li>
+                    <li><a href="#services" class="footer-link">Maintenance & Support</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
