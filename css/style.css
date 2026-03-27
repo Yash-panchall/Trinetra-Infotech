@@ -9,6 +9,12 @@
 
 html {
     font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+    scroll-padding-top: 28rem;
+}
+
+section[id] {
+    scroll-margin-top: 10rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -898,5 +904,19 @@ cursor: pointer;
 
     .endsection-contact-us .grid{
         padding: 2rem;
+    }
+}
+
+@media (max-width: 305px) {
+    .section-why-choose-us .choose-center-content img{
+        min-width: 10rem;
+    }
+
+    .endsection-contact-us .grid {
+        grid-template-columns: repeat(1, 1fr);
+
+        & .section-end-content{
+            text-align: center;
+        }
     }
 }
