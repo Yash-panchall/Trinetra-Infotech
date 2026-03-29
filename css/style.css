@@ -43,7 +43,7 @@ li {
     --font-color: #111827;
     --bg-color: #FFFFFF;
     --heading-color: #1F2937;
-    --para-color: #4B5563;
+    --para-color: #374151;
     --btn-hover-color: #1E40AF;
     --btn-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     --supporting-linear-gradient : linear-gradient(to right, #f8fafc, #e0e7ff);
@@ -480,6 +480,7 @@ footer{
 
     & p ,li a{
         font-size: 1.3rem;
+        line-height: 1.6;
     }
 }
 
@@ -495,6 +496,16 @@ footer *{
     & .footer-heading{
         margin-bottom: 1.5rem;
     }
+
+    & .footer-toggle{
+        display: none;
+    }
+}
+
+.section-footer .footer-links ul li a,
+.section-footer .footer-services ul li a{
+    display: inline-block;
+    padding: 0.8rem 0;
 }
 
 .footer-about{
@@ -871,6 +882,7 @@ cursor: pointer;
         position: relative;
 
         & .footer-toggle{
+            display: block;
             position: absolute;
             font-size: large;
             top: 0;
@@ -885,6 +897,13 @@ cursor: pointer;
 
         &.footer-open ul{
             display: block;
+        }
+    }
+
+    .section-hero{
+
+        & .section-hero--img img{
+            width: 50%;
         }
     }
 
