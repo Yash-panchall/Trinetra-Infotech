@@ -63,6 +63,14 @@
                 const isOpen = navbar.classList.toggle('nav-open');
             });
 
+            // Close nav menu when a nav link is clicked (mobile view)
+            const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('nav-open');
+                });
+            });
+
             const footerToggles = document.querySelectorAll('.footer-toggle');
             footerToggles.forEach(toggle => {
                 toggle.addEventListener('click', () => {

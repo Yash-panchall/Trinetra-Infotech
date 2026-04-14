@@ -10,12 +10,12 @@
 html {
     font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
-    scroll-padding-top: 28rem;
+    scroll-padding-top: 11rem;
 }
-
+/* 
 section[id] {
     scroll-margin-top: 10rem;
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
