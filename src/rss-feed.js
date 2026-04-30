@@ -80,7 +80,9 @@ async function fetchFeed(feed) {
   return entries
     .map((entry) => normalizeEntry(entry, feed.source))
     .filter(Boolean)
-    .filter((entry) => matchesKeywords(entry.title, entry.summary));
+    // Show all parsed entries by default in production so the feed is visible.
+    // Keyword filtering can hide many valid stories; re-enable filtering
+    // later if you want stricter relevance.
 }
 
 function normalizeEntry(entry, source) {
