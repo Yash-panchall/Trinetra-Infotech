@@ -196,7 +196,7 @@ li {
     padding: 5rem 0 2rem 0;
 } */
 
-:is(.section-about, .section-our-services, .section-why-choose-us, .section-contact) .container:first-child{
+:is(.section-about, .section-our-services, .section-why-choose-us, .section-blogs, .section-contact) .container:first-child{
     padding: 5rem 2rem 2rem 2rem;
 }
 
@@ -427,6 +427,100 @@ li {
 
 
 /* Why choose us section endsection */
+
+
+/* Blogs section */
+
+.section-blogs{
+    background-color: #fff;
+}
+
+.section-blogs .grid-three--cols{
+    padding: 8rem 2.4rem;
+    gap: 5rem;
+}
+
+.blog-card{
+    padding: 2.4rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e5e7eb;
+    box-shadow: rgba(15, 23, 42, 0.06) 0px 10px 30px;
+    transition: all 0.3s ease;
+
+    & .section-common-title{
+        margin: 1rem 0 1.2rem 0;
+    }
+
+    &:hover{
+        transform: translateY(-0.6rem);
+        box-shadow: rgba(15, 23, 42, 0.12) 0px 18px 40px;
+    }
+}
+
+.blog-date{
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--main-color);
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.blog-para{
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.blog-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    color: var(--main-color);
+
+    &:hover{
+        color: var(--btn-hover-color);
+    }
+}
+
+.blog-feed-status{
+    margin: 1.5rem 0 0 0;
+    font-size: 1.5rem;
+    color: var(--para-color);
+}
+
+.blog-feed-empty,
+.blog-feed-error{
+    grid-column: 1 / -1;
+    padding: 2rem 0;
+    font-size: 1.5rem;
+    color: var(--para-color);
+}
+
+.blog-source{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background-color: rgba(104, 163, 232, 0.12);
+    color: var(--main-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+}
+
+.blog-time{
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--para-color);
+    font-size: 1.3rem;
+}
+
+/* Blogs section end */
 
 
 /* Contact home section */
@@ -760,6 +854,11 @@ cursor: pointer;
         text-align: center;
     }
 
+    .section-blogs .grid-three--cols{
+        grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+        text-align: center;
+    }
+
     .section-why-choose-us .grid-three--cols{
         & .choose-center-content{
             order: 1;
@@ -792,6 +891,10 @@ cursor: pointer;
     }
 
     .section-our-services .grid-three--cols{
+        grid-template-columns: 1fr;
+    }
+
+    .section-blogs .grid-three--cols{
         grid-template-columns: 1fr;
     }
 

@@ -1,0 +1,26 @@
+{
+  "source": "local",
+  "items": [
+    {
+      "source": "WIRED",
+      "publishedAt": 1746024600000,
+      "title": "OpenAI adds security mode for at-risk accounts",
+      "summary": "Account protection and phishing defense matter just as much as model quality in practical AI deployments.",
+      "link": "https://www.wired.com/story/openai-chatgpt-codex-advanced-account-security/"
+    },
+    {
+      "source": "WIRED",
+      "publishedAt": 1746023400000,
+      "title": "AI agents and spending controls are colliding",
+      "summary": "Software teams are balancing automation with guardrails so agentic tools do not create expensive mistakes.",
+      "link": "https://www.wired.com/story/the-race-is-on-to-keep-ai-agents-from-running-wild-with-your-credit-cards/"
+    },
+    {
+      "source": "TechCrunch AI",
+      "publishedAt": 1746019200000,
+      "title": "How one AI startup is helping rice farmers battle climate change",
+      "summary": "A good example of applied AI solving a specific real-world workflow problem.",
+      "link": "https://techcrunch.com/2025/08/26/how-one-ai-startup-is-helping-rice-farmers-battle-climate-change/"
+    }
+  ]
+}

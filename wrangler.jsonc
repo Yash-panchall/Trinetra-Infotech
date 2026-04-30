@@ -2,6 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "infoyash-technologies",
   "compatibility_date": "2025-09-27",
+  "main": "src/rss-feed.js",
   "observability": {
     "enabled": true
   },
