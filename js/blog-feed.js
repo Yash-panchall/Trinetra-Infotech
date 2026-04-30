@@ -1,8 +1,7 @@
 async function loadBlogFeed() {
   const feedContainer = document.getElementById('blog-feed');
-  const statusElement = document.getElementById('blog-feed-status');
 
-  if (!feedContainer || !statusElement) {
+  if (!feedContainer) {
     return;
   }
 
@@ -11,24 +10,28 @@ async function loadBlogFeed() {
     const items = Array.isArray(data.items) ? data.items : [];
 
     if (items.length === 0) {
-      statusElement.textContent = 'No relevant tech stories found right now.';
-      feedContainer.innerHTML = '<div class="blog-feed-empty">No live items matched the current filter.</div>';
+      const backupData = await fetchBackupFeedData();
+      const backupItems = Array.isArray(backupData.items) ? backupData.items : [];
+
+      if (backupItems.length > 0) {
+        feedContainer.innerHTML = backupItems.map(renderCard).join('');
+        return;
+      }
+
+      feedContainer.innerHTML = '<div class="blog-feed-empty">No live or backup items matched the current filter.</div>';
       return;
     }
 
-    statusElement.textContent = data.source === 'local' ? 'Local feed preview loaded for development.' : 'Live stories updated from RSS feeds.';
     feedContainer.innerHTML = items.map(renderCard).join('');
   } catch (error) {
-    statusElement.textContent = 'Live feed could not be loaded right now.';
     feedContainer.innerHTML = '<div class="blog-feed-error">Unable to load live RSS stories at the moment. Please try again later.</div>';
   }
 }
 
 async function fetchFeedData() {
   const localFeedUrl = new URL('data/blog-feed.json', window.location.href).href;
-  const workerFeedUrl = '/api/blog-feed';
-  const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-  const feedUrls = isLocalhost ? [localFeedUrl, workerFeedUrl] : [workerFeedUrl, localFeedUrl];
+  const workerFeedUrl = new URL('/api/blog-feed', window.location.origin).href;
+  const feedUrls = [workerFeedUrl, localFeedUrl];
 
   let lastError = null;
 
@@ -48,6 +51,18 @@ async function fetchFeedData() {
   }
 
   throw lastError || new Error('Feed request failed');
+}
+
+async function fetchBackupFeedData() {
+  const backupUrl = new URL('data/blog-feed.json', window.location.href).href;
+  const response = await fetch(backupUrl);
+
+  if (!response.ok) {
+    throw new Error('Backup feed request failed');
+  }
+
+  const data = await response.json();
+  return { ...data, source: 'backup' };
 }
 
 function renderCard(item) {

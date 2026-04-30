@@ -79,10 +79,7 @@ async function fetchFeed(feed) {
 
   return entries
     .map((entry) => normalizeEntry(entry, feed.source))
-    .filter(Boolean)
-    // Show all parsed entries by default in production so the feed is visible.
-    // Keyword filtering can hide many valid stories; re-enable filtering
-    // later if you want stricter relevance.
+    .filter(Boolean);
 }
 
 function normalizeEntry(entry, source) {
@@ -112,7 +109,7 @@ function extractEntries(xml) {
 }
 
 function extractTagValue(entry, tagName) {
-  const pattern = new RegExp(`<${tagName}[^>]*>([\s\S]*?)<\/${tagName}>`, "i");
+  const pattern = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\/${tagName}>`, "i");
   const match = entry.match(pattern);
 
   if (!match) {
@@ -137,11 +134,6 @@ function extractDateValue(entry) {
   const timestamp = Date.parse(raw);
 
   return Number.isNaN(timestamp) ? Date.now() : timestamp;
-}
-
-function matchesKeywords(title, summary) {
-  const haystack = `${title} ${summary}`.toLowerCase();
-  return KEYWORDS.some((keyword) => haystack.includes(keyword));
 }
 
 function stripMarkup(value) {
